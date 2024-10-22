@@ -383,7 +383,7 @@ Resources:
       Handler: SFTPCustomAuthLambdaFunction.lambda_handler
       Role:
         Fn::GetAtt: LambdaExecutionRole.Arn
-      Runtime: python3.7
+      Runtime: python3.10
       Timeout: 5
       Environment:
         Variables:
@@ -684,7 +684,7 @@ Resources:
             ],
           ]
       Handler: TransferMiscConfigLambdaFunction.lambda_handler
-      Runtime: python3.7
+      Runtime: python3.10
       Timeout: 10
       Role: !GetAtt CustomResourceLambdaExecutionRole.Arn
 
