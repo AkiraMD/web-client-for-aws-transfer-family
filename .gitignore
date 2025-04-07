@@ -2,3 +2,5 @@
 deployment/global-s3-assets/
 deployment/regional-s3-assets/
 dist/
+source/frontend/dist/
+source/frontend/node_modules/
