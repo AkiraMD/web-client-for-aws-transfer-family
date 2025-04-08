@@ -17,13 +17,15 @@ Resources:
           - id: W92
             reason: "Edge function. Concurrent execution reservation not required for this use case."
     Properties:
+      Description: "Adds security headers to CloudFront responses. Version 6 - Updated on 2025-04-08"
       Role: !GetAtt SecurityHeadersLambdaRole.Arn
       Runtime: nodejs14.x
       Handler: index.handler
       Code:
         ZipFile: !Join
           - "\n"
-          - - "exports.handler = (event, context, callback) =>"
+          - - "// Force new version - timestamp: 2025-04-08-v6"
+            - "exports.handler = (event, context, callback) =>"
             - "{"
             - "   const response = event.Records[0].cf.response;"
             - "   const headers = response.headers;"
@@ -55,6 +57,7 @@ Resources:
     Type: 'AWS::Lambda::Version'
     Properties:
       FunctionName: !Ref SecurityHeadersLambda
+      Description: "Version 6 deployed on 2025-04-08"
 
 Outputs:
   VersionedSecurityHeadersLambda:

@@ -36,3 +36,24 @@ h4 {
     top: 180px;
   }
 }
+
+.upload-dialog-content {
+  min-width: 600px;
+  min-height: 400px;
+}
+
+.upload-drop-area {
+  border: 1px dashed grey;
+  height: 100%;
+  position: relative;
+}
+
+.upload-drop-area-text {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
+
+.new-folder-dialog-content {
+  min-width: 300px;
+}

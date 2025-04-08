@@ -95,7 +95,7 @@
                     </div>
                     <div class="flex items-center">
                         <p-dialog [(visible)]="upload_dialog_display" header="Upload File" position="top">
-                            <div style="min-width:600px;min-height:400px;">
+                            <div class="upload-dialog-content">
 
                                 <p-fileUpload #fileUploader
                                               (onUpload)="onUpload($event)"
@@ -103,8 +103,8 @@
                                               [files]="myfiles" [customUpload]="true"
                                               method="POST" mode="advanced" name="filename">
                                     <ng-template pTemplate="content">
-                                        <div style="border:1px dashed grey;height:100%;position: relative;">
-                                           <div style="position: absolute; top: 10%; left: 10%">
+                                        <div class="upload-drop-area">
+                                           <div class="upload-drop-area-text">
                                                Drag a <b>single</b> file within this bordered area to queue for upload
                                                or press "+ Choose" button.
                                                <br/>NOTE: only single file support at the moment.
@@ -118,7 +118,7 @@
                             <p-progressBar [ngStyle]="{'visibility':file_uploading==true ? 'visible' : 'hidden'}" mode="indeterminate"></p-progressBar>
                         </p-dialog>
                         <p-dialog [(visible)]="displayFolderDialog" header="Add New Folder" position="top">
-                            <div style="min-width:300px;">
+                            <div class="new-folder-dialog-content">
                                 {{currentFolderPath}} / <input [(ngModel)]="newFolderInputText" class="border-2" type="text" /> /
                                 <br><br>
                                 <button (click)="newFolderCreate()" [disabled]="newFolderInputText == undefined" class="bg-none border border-red-600 p-2 w-auto h-auto rounded text-gray-800 text-sm mr-2"><i
